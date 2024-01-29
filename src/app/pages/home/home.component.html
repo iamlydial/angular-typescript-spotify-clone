@@ -1,15 +1,20 @@
 <div class="spotify__home-container row">
   <div class="spotify__home-container_side-bar col-2">
     <div class="spotify__home-container_side-bar-item">
-      <img width="150" class="m-3 text-left" src="../../../assets/Spotify_Logo_CMYK_White.png" alt="spotify light logo">
+      <img
+        width="150"
+        class="m-3 text-left"
+        src="../../../assets/Spotify_Logo_CMYK_White.png"
+        alt="spotify light logo"
+      />
     </div>
 
     <div class="spotify__home-container_side-bar-item">
-      <a >Home</a>
+      <a>Home</a>
     </div>
 
     <div class="spotify__home-container_side-bar-item">
-      <a >Search</a>
+      <a>Search</a>
     </div>
 
     <div class="spotify__home-container_side-bar-item">
@@ -21,5 +26,13 @@
   </div>
   <div class="spotify__home-container_playlist-container col-10">
     <app-top-nav></app-top-nav>
+    <div [style.paddingTop]="'48px'" class="mt-5 container">
+      <app-song-card
+      *ngFor="let songCard of songCards"
+      [title]="songCard.title"
+      [description]="songCard.description"
+      >
+      </app-song-card>
+    </div>
   </div>
 </div>
